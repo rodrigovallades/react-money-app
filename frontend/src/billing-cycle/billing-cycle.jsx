@@ -6,6 +6,7 @@ import ContentHeader from '../common/template/content/content-header'
 import Content from '../common/template/content/content'
 import { Tabs, TabsHeader, TabsContent, TabHeader, TabContent } from '../common/tabs/tabs'
 import { selectTab, showTabs } from '../common/tabs/tab-actions'
+import List from './billing-cycle-list'
 
 class BillingCycle extends Component {
 
@@ -27,7 +28,9 @@ class BillingCycle extends Component {
               <TabHeader label='Delete' icon='times' target='tabDelete' />
             </TabsHeader>
             <TabsContent>
-              <TabContent id='tabList'><h1>List</h1></TabContent>
+              <TabContent id='tabList'>
+                <List />
+              </TabContent>
               <TabContent id='tabCreate'><h1>Create</h1></TabContent>
               <TabContent id='tabUpdate'><h1>Update</h1></TabContent>
               <TabContent id='tabDelete'><h1>Delete</h1></TabContent>
