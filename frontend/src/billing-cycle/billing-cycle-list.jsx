@@ -1,7 +1,10 @@
+// React
 import React, { Component } from 'react'
 
+// Redux
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+
 import { getList } from './billing-cycle-actions'
 
 class BillingCycleList extends Component {
@@ -9,6 +12,17 @@ class BillingCycleList extends Component {
     componentWillMount() {
       this.props.getList()
       console.log(this.props.list)
+    }
+
+    renderRows() {
+      const list = this.props.list || []
+      return list.map(cycle => (
+        <tr key={cycle._id}>
+          <td>{cycle.name}</td>
+          <td>{cycle.month}</td>
+          <td>{cycle.year}</td>
+        </tr>
+      ))
     }
 
     render() {
@@ -23,7 +37,7 @@ class BillingCycleList extends Component {
               </tr>
             </thead>
             <tbody>
-
+              {this.renderRows()}
             </tbody>
           </table>
         </div>
