@@ -14,23 +14,25 @@ class BillingCycleForm extends Component {
 
   render() {
     // method handleSubmit comes from redux-form
-    const { handleSubmit } = this.props
+    const { handleSubmit, readOnly } = this.props
 
     return (
       <form role='form' onSubmit={handleSubmit}>
         <div className='box-body'>
           <div className="row">
-            <Field name='name' component={labelAndInput}
+            <Field name='name' component={labelAndInput} readOnly={readOnly}
             label='Name' breakpoints='12 4' placeholder='Name' />
-            <Field name='month' component={labelAndInput} type='number'
+            <Field name='month' component={labelAndInput} readOnly={readOnly} type='number'
             label='Month (MM)' breakpoints='12 4' placeholder='Month (MM)' />
-            <Field name='year' component={labelAndInput} type='number'
+            <Field name='year' component={labelAndInput} readOnly={readOnly} type='number'
             label='Year (YYYY)' breakpoints='12 4' placeholder='Year (YYYY)' />
           </div>
         </div>
         <div className='box-footer'>
-          <button type='submit' className='btn btn-primary'>Submit</button>
-          <button type='button' className='btn btn-default' onClick={this.props.init}>Cancel</button>
+          <div className='btn-group'>
+            <button type='submit' className='btn btn-primary'>{this.props.submitLabel}</button>
+            <button type='button' className='btn btn-default' onClick={this.props.init}>Cancel</button>
+          </div>
         </div>
       </form>
     )
