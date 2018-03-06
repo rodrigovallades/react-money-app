@@ -5,8 +5,7 @@ import axios from 'axios'
 
 import Row from '../common/layout/row'
 import Grid from '../common/layout/grid'
-import ContentHeader from '../common/template/content/content-header'
-import Content from '../common/template/content/content'
+import { Content, ContentHeader } from '../common/template/content/content'
 import Valuebox from '../common/widgets/value-box'
 
 const BASE_URL = 'http://localhost:3003/api'

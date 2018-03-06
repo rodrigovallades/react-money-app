@@ -8,8 +8,7 @@ import { bindActionCreators } from 'redux'
 import { getSummary } from './dashboard-actions'
 import Row from '../common/layout/row'
 import Grid from '../common/layout/grid'
-import ContentHeader from '../common/template/content/content-header'
-import Content from '../common/template/content/content'
+import { Content, ContentHeader } from '../common/template/content/content'
 import Valuebox from '../common/widgets/value-box'
 
 class Dashboard extends Component {
